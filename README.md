@@ -1,8 +1,3 @@
-Here is a professional, direct, and well-structured `README.md` for your project, following your tone and content guidelines:
-
----
-
-```markdown
 # Python Error Explainer (RAG Pipeline)
 
 This project implements a Retrieval-Augmented Generation (RAG) pipeline designed to explain Python error messages in simple terms. It retrieves relevant explanations from a local dataset and uses a language model to generate clear, beginner-friendly responses.
@@ -16,8 +11,6 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline designed
 
 ## Project Structure
 
-```
-
 python\_error\_explainer/
 ├── run.py                      # Main entry point
 ├── .env                        # API key configuration
@@ -29,7 +22,6 @@ python\_error\_explainer/
 ├── prompt\_template.py      # Formats prompt for the language model
 └── llm\_generator.py        # Sends prompt to the LLM and returns the response
 
-````
 
 ## Requirements
 
