@@ -9,18 +9,34 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline designed
 - Accepts user input (an error message), retrieves the most relevant context, and queries a language model (via Groq API).
 - Generates a simplified explanation using a structured prompt and the retrieved context.
 
+If your folder structure in the README appears **flattened and misaligned**, it’s likely because Markdown isn't rendering the tree properly. To fix that, you need to wrap the directory tree in a code block using triple backticks (\`\`\`) and specify it as a plain `text` block.
+
+Here's how to correctly format the structure in your `README.md`:
+
+---
+
+### ✅ Fixed Example
+
+````markdown
 ## Project Structure
 
-python\_error\_explainer/
-├── run.py                      # Main entry point
-├── .env                        # API key configuration
-├── requirements.txt            # Python dependencies
-├── data/errors.txt             # List of common Python errors + explanations
+```text
+python_error_explainer/
+├── run.py                   # Main entry point
+├── .env                     # API key configuration
+├── requirements.txt         # Python dependencies
+├── data/
+│   └── errors.txt           # Common Python errors + explanations
 └── rag/
-├── embedder.py             # Handles document and query embeddings
-├── retriever.py            # Uses FAISS to retrieve top relevant documents
-├── prompt\_template.py      # Formats prompt for the language model
-└── llm\_generator.py        # Sends prompt to the LLM and returns the response
+    ├── embedder.py          # Handles document and query embeddings
+    ├── retriever.py         # Uses FAISS to retrieve top relevant documents
+    ├── prompt_template.py   # Formats prompt for the language model
+    └── llm_generator.py     # Sends prompt to the LLM and returns the response
+````
+
+`````
+
+---
 
 
 ## Requirements
