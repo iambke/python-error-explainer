@@ -20,7 +20,7 @@ Here's how to correctly format the structure in your `README.md`:
 ````markdown
 ## Project Structure
 
-```text
+```
 python_error_explainer/
 ├── run.py                   # Main entry point
 ├── .env                     # API key configuration
@@ -33,11 +33,6 @@ python_error_explainer/
     ├── prompt_template.py   # Formats prompt for the language model
     └── llm_generator.py     # Sends prompt to the LLM and returns the response
 ````
-
-`````
-
----
-
 
 ## Requirements
 
