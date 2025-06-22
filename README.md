@@ -11,6 +11,7 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline designed
 
 ## Project Structure
 
+<<<<<<< HEAD
 python\_error\_explainer/
 ├── run.py                      # Main entry point
 ├── .env                        # API key configuration
@@ -22,12 +23,33 @@ python\_error\_explainer/
     ├── prompt\_template.py      # Formats prompt for the language model
     └── llm\_generator.py        # Sends prompt to the LLM and returns the response
 
+=======
+```
+python_error_explainer/
+├── run.py                   # Main entry point
+├── .env                     # API key configuration
+├── requirements.txt         # Python dependencies
+├── data/
+│   └── errors.txt           # Common Python errors + explanations
+└── rag/
+    ├── embedder.py          # Handles document and query embeddings
+    ├── retriever.py         # Uses FAISS to retrieve top relevant documents
+    ├── prompt_template.py   # Formats prompt for the language model
+    └── llm_generator.py     # Sends prompt to the LLM and returns the response
+````
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 ## Requirements
 
 Install all required dependencies using:
 
+<<<<<<< HEAD
 pip install -r requirements.txt
+=======
+```bash
+pip install -r requirements.txt
+````
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 This project depends on:
 
@@ -41,8 +63,14 @@ This project depends on:
 
 1. Create a `.env` file in the root directory with the following content:
 
+<<<<<<< HEAD
    GROQ_API_KEY=your_api_key_here
 
+=======
+   ```
+   GROQ_API_KEY=your_api_key_here
+   ```
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 2. Ensure `errors.txt` is located in the `data/` folder. This file contains error explanations used for retrieval.
 
@@ -50,7 +78,13 @@ This project depends on:
 
 Run the program with:
 
+<<<<<<< HEAD
 python run.py
+=======
+```bash
+python run.py
+```
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 You will be prompted to paste a Python error message. The script will:
 
@@ -60,10 +94,18 @@ You will be prompted to paste a Python error message. The script will:
 
 ### Example
 
+<<<<<<< HEAD
+=======
+```
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 Paste your Python error: IndexError: list index out of range
 
 --- Explanation ---
 This error occurs when you try to access an index in a list that doesn’t exist...
+<<<<<<< HEAD
+=======
+```
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 ## Notes
 
@@ -73,5 +115,8 @@ This error occurs when you try to access an index in a list that doesn’t exist
 ## License
 
 This project is shared for educational and demonstration purposes only.
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a071078d9b63f93b535488f3121dad8391514b20
