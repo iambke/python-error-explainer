@@ -82,7 +82,3 @@ This error occurs when you try to access an index in a list that doesn’t exist
 
 * The model used for generation is `gemma2-9b-it`, queried via Groq's API.
 * Retrieval is restricted to the context provided in `errors.txt`. The LLM is instructed not to hallucinate.
-
-## License
-
-This project is shared for educational and demonstration purposes only.
