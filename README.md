@@ -48,7 +48,6 @@ This project depends on:
 
 1. Create a `.env` file in the root directory with the following content:
 
-=======
    ```
    GROQ_API_KEY=your_api_key_here
    ```
