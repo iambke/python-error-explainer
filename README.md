@@ -9,15 +9,6 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline designed
 - Accepts user input (an error message), retrieves the most relevant context, and queries a language model (via Groq API).
 - Generates a simplified explanation using a structured prompt and the retrieved context.
 
-If your folder structure in the README appears **flattened and misaligned**, it’s likely because Markdown isn't rendering the tree properly. To fix that, you need to wrap the directory tree in a code block using triple backticks (\`\`\`) and specify it as a plain `text` block.
-
-Here's how to correctly format the structure in your `README.md`:
-
----
-
-### ✅ Fixed Example
-
-````markdown
 ## Project Structure
 
 ```
