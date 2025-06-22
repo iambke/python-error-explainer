@@ -11,19 +11,6 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline designed
 
 ## Project Structure
 
-<<<<<<< HEAD
-python\_error\_explainer/
-├── run.py                      # Main entry point
-├── .env                        # API key configuration
-├── requirements.txt            # Python dependencies
-├── data/errors.txt             # List of common Python errors + explanations
-└── rag/
-    ├── embedder.py             # Handles document and query embeddings
-    ├── retriever.py            # Uses FAISS to retrieve top relevant documents
-    ├── prompt\_template.py      # Formats prompt for the language model
-    └── llm\_generator.py        # Sends prompt to the LLM and returns the response
-
-=======
 ```
 python_error_explainer/
 ├── run.py                   # Main entry point
@@ -37,19 +24,17 @@ python_error_explainer/
     ├── prompt_template.py   # Formats prompt for the language model
     └── llm_generator.py     # Sends prompt to the LLM and returns the response
 ````
->>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 ## Requirements
 
 Install all required dependencies using:
 
-<<<<<<< HEAD
 pip install -r requirements.txt
 =======
 ```bash
 pip install -r requirements.txt
 ````
->>>>>>> a071078d9b63f93b535488f3121dad8391514b20
+
 
 This project depends on:
 
@@ -105,7 +90,6 @@ This error occurs when you try to access an index in a list that doesn’t exist
 <<<<<<< HEAD
 =======
 ```
->>>>>>> a071078d9b63f93b535488f3121dad8391514b20
 
 ## Notes
 
@@ -115,8 +99,3 @@ This error occurs when you try to access an index in a list that doesn’t exist
 ## License
 
 This project is shared for educational and demonstration purposes only.
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a071078d9b63f93b535488f3121dad8391514b20
