@@ -29,8 +29,6 @@ python_error_explainer/
 
 Install all required dependencies using:
 
-pip install -r requirements.txt
-=======
 ```bash
 pip install -r requirements.txt
 ````
