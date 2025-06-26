@@ -1,13 +1,18 @@
-# Python Error Explainer (RAG Pipeline)
+# Python Error Explainer – RAG-powered Traceback Interpreter
 
-This project implements a Retrieval-Augmented Generation (RAG) pipeline designed to explain Python error messages in simple terms. It retrieves relevant explanations from a local dataset and uses a language model to generate clear, beginner-friendly responses.
+Explains Python errors in plain English using retrieval-augmented generation (RAG) + Groq.
 
 ## Overview
 
+This project implements a Retrieval-Augmented Generation (RAG) pipeline to explain Python error messages in simple terms. It retrieves relevant explanations from a local dataset and uses a language model to generate clear, beginner-friendly responses.
+
+### Key Features
+
 - Retrieves explanations for common Python errors from a curated text file.
 - Embeds and indexes explanations using `sentence-transformers` and `FAISS`.
-- Accepts user input (an error message), retrieves the most relevant context, and queries a language model (via Groq API).
-- Generates a simplified explanation using a structured prompt and the retrieved context.
+- Accepts full Python tracebacks as user input (multi-line supported).
+- Queries Groq’s LLM (`gemma-2-9b-it`) using retrieved context only — no hallucination.
+- Returns clear, human-readable error explanations.
 
 ## Project Structure
 
@@ -50,7 +55,7 @@ This project depends on:
    GROQ_API_KEY=your_api_key_here
    ```
 
-2. Ensure `errors.txt` is located in the `data/` folder. This file contains error explanations used for retrieval.
+2. Ensure `errors.txt` is in the `data/` folder. This file contains 69 beginner-friendly Python error explanations formatted for retrieval.
 
 ## Usage
 
@@ -63,20 +68,23 @@ python run.py
 
 You will be prompted to paste a Python error message. The script will:
 
-* Embed your input
-* Retrieve the most relevant error explanations
-* Generate a clear explanation using the Groq LLM API
+* Embed your input using `sentence-transformers`
+* Retrieve the most relevant explanations using `FAISS`
+* Generate a simplified explanation using the Groq LLM API
 
 ### Example
 
 ```
-Paste your Python error: IndexError: list index out of range
+Paste your Python error (press Enter twice to finish):
+Traceback (most recent call last):
+  File "<main.py>", line 2, in <module>
+KeyError: 'gender'
 
 --- Explanation ---
-This error occurs when you try to access an index in a list that doesn’t exist...
+This error means your program is trying to find something called "gender" inside a dictionary, but that "gender" isn't actually there...
 ```
 
 ## Notes
 
 * The model used for generation is `gemma2-9b-it`, queried via Groq's API.
-* Retrieval is restricted to the context provided in `errors.txt`. The LLM is instructed not to hallucinate.
+* Retrieval is limited to the provided `errors.txt` context to ensure factual explanations.
