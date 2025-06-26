@@ -20,7 +20,19 @@ doc_embeddings = embedder.embed_documents(docs)
 retriever = Retriever(doc_embeddings)
 
 # Ask user
-query = input("Paste your Python error: ").strip()
+print("Paste your Python error (press Enter twice to finish):")
+lines = []
+while True:
+    try:
+        line = input()
+        if line == "":
+            break
+        lines.append(line)
+    except EOFError:
+        break  # Handles Ctrl+D / end-of-input in some environments
+
+query = "\n".join(lines)
+
 query_embedding = embedder.embed_documents([query])[0]
 top_k_indices = retriever.retrieve(query_embedding)
 context = [docs[i] for i in top_k_indices]

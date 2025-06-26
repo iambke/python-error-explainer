@@ -1,34 +1,140 @@
-IndexError: list index out of range
-This error occurs when you try to access an index in a list that doesn’t exist. Lists in Python are zero-indexed, so the first element is at index 0, the second at index 1, and so on. If a list has 3 elements (indexes 0 to 2), trying to access index 3 or higher will raise this error. To fix it, always check the length of your list using `len()` before accessing an index.
+ArithmeticError: A base class for errors related to arithmetic operations (like division or overflow).
 
-TypeError: 'int' object is not iterable
-This happens when you try to loop over an integer using a for-loop or try to convert it into a list or set. Integers are not sequences, so you can't iterate over them. For example, `for i in 5:` will cause this error. If you intended to loop 'n' times, use `range(5)` instead.
+AssertionError: Raised when an assert statement fails.
 
-AttributeError: 'NoneType' object has no attribute
-This error means you're trying to access an attribute or call a method on a variable that is `None`. It often occurs when a function returns `None` unexpectedly. For example, calling `.append()` on a list returns `None`, so doing `result = my_list.append(3)` and then `result.sort()` would raise this error. Make sure your variable is not `None` before using it.
+AttributeError: Raised when an object does not have the attribute you tried to access.
 
-SyntaxError: invalid syntax
-This is raised when Python encounters a line of code that doesn't follow the correct syntax rules. Common causes include missing colons, unmatched parentheses, incorrect indentation, or typos in keywords. For example, `if True print('hi')` is invalid because the colon after `if True` is missing. Always double-check punctuation and indentation.
+BaseException: Base class for all built-in exceptions.
+Not meant to be caught directly.
 
-NameError: name 'xyz' is not defined
-This error occurs when you try to use a variable or function that hasn’t been defined yet. This could be due to a typo, or because the variable is used before being assigned. For example, `print(my_var)` before `my_var = 5` will cause a NameError. Make sure all variables are defined before use.
+BaseExceptionGroup: Groups multiple unrelated exceptions into one, introduced in Python 3.11.
 
-ZeroDivisionError: division by zero
-This error occurs when a number is divided by zero, which is mathematically undefined. In Python, trying `10 / 0` will raise this error. Always ensure the denominator is not zero before performing division.
+BlockingIOError: Raised when an operation would block on an object (like a non-blocking socket).
 
-IndentationError: expected an indented block
-This means that Python expected an indented line after a statement like `if`, `for`, `while`, `def`, or `class`. Python uses indentation (spaces or tabs) to define blocks of code. For example:
+BrokenPipeError: Occurs when trying to write to a pipe that has been closed on the other end.
 
-```python
-if x > 0:
-print(x)  # this line should be indented
-```
+BufferError: Raised when a buffer-related operation cannot be performed.
 
-ModuleNotFoundError: No module named 'xyz'
-This error means that Python can’t find the module you’re trying to import. It may not be installed, or you might have misspelled the name. You can install modules using `pip install module_name`. Also check for typos in the import statement.
+BytesWarning: Warning about operations that implicitly convert bytes to/from strings.
 
-ValueError: invalid literal for int() with base 10
-This error occurs when you try to convert a string to an integer, but the string isn’t formatted correctly. For example, `int('hello')` will raise this. Ensure the string only contains digits or valid numerical characters before conversion.
+ChildProcessError: Raised when an operation on a child process fails.
 
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
-This means you're trying to add an integer and a string, which Python doesn't allow directly. For example: `1 + 'a'`. If you want to concatenate, convert the int to a string first: `str(1) + 'a'`. If you're doing math, make sure all operands are numbers.
+ConnectionAbortedError: Connection was aborted by the peer.
+
+ConnectionError: Base class for connection-related errors.
+
+ConnectionRefusedError: Raised when a connection attempt is refused.
+
+ConnectionResetError: Connection was reset by the peer.
+
+DeprecationWarning: Warns about features that are deprecated and may be removed.
+
+EOFError: Raised when input() hits an end-of-file condition (no more input).
+
+EncodingWarning: Warns about potential encoding issues.
+
+EnvironmentError: Alias for OSError.
+Raised for system-related errors.
+
+Exception: Base class for all standard exceptions.
+
+ExceptionGroup: Holds multiple exceptions that occurred together (Python 3.11+).
+
+FileExistsError: Trying to create a file or directory that already exists.
+
+FileNotFoundError: Trying to access a file that does not exist.
+
+FloatingPointError: Raised for errors in floating point calculations.
+
+FutureWarning: Warns about features that will change in the future.
+
+GeneratorExit: Raised when a generator or coroutine is closed.
+
+IOError: Alias for OSError.
+Input/output operation failure.
+
+ImportError: Python cannot find or load the specified module.
+
+ImportWarning: Warns about potential issues with imports.
+
+IndentationError: Incorrect indentation in Python code.
+
+IndexError: List or tuple index out of range.
+
+InterruptedError: A system call was interrupted.
+
+IsADirectoryError: Tried to operate on a directory as if it were a file.
+
+KeyError: Dictionary key not found.
+
+KeyboardInterrupt: Raised when the user presses Ctrl+C to stop a program.
+
+LookupError: Base class for IndexError and KeyError.
+
+MemoryError: Not enough memory to perform an operation.
+
+ModuleNotFoundError: Raised when an imported module cannot be found.
+
+NameError: Trying to use a variable that hasn’t been defined.
+
+NotADirectoryError: A file was used where a directory was expected.
+
+NotImplementedError: Raised when an abstract method or feature is not implemented.
+
+OSError: Generic system-related error.
+
+OverflowError: Result of a numeric operation is too large to be represented.
+
+PendingDeprecationWarning: Warns about deprecated features that will change in the future.
+
+PermissionError: Trying to perform an operation without the necessary permissions.
+
+ProcessLookupError: Trying to operate on a process that doesn’t exist.
+
+RecursionError: Too many recursive function calls (stack overflow).
+
+ReferenceError: Trying to access a deleted object via weak reference.
+
+ResourceWarning: Warns about resource usage, like open files.
+
+RuntimeError: Generic error not covered by other types.
+
+RuntimeWarning: Warns about issues that don’t stop the program but might be problematic.
+
+StopAsyncIteration: Raised to signal the end of an asynchronous iterator.
+
+StopIteration: Raised to signal the end of an iterator.
+
+SyntaxError: Your code has a syntax problem.
+
+SyntaxWarning: Warns about suspicious syntax.
+
+SystemError: Python itself has encountered an internal error.
+
+SystemExit: Raised by sys.exit(), used to stop the program.
+
+TabError: Incorrect mixture of tabs and spaces in indentation.
+
+TimeoutError: Operation took too long and timed out.
+
+TypeError: Wrong type of object used.
+
+UnboundLocalError: Trying to use a local variable before it has been assigned.
+
+UnicodeDecodeError: Error decoding a byte string into Unicode.
+
+UnicodeEncodeError: Error encoding a Unicode string into bytes.
+
+UnicodeError: Generic Unicode-related error.
+
+UnicodeTranslateError: Error translating Unicode to another encoding.
+
+UnicodeWarning: Warns about possible Unicode issues.
+
+UserWarning: General warning generated by user code.
+
+ValueError: Object has the right type but an inappropriate value.
+
+Warning: Base class for warning categories.
+
+ZeroDivisionError: Trying to divide by zero.
